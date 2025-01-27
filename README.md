@@ -8,5 +8,5 @@
    2.2. about symphony
      
 
-# I want this function to be implemented!
-# header- if the cursor is on the header menu, mini pages are presented as thier name list
+## I want this function to be implemented!
+## header- if the cursor is on the header menu, mini pages are presented as thier name list
