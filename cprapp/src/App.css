@@ -1,10 +1,47 @@
-.center-container{
+.container{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 8vh;
+  flex-direction: column;
+  justify-content: space-between;
+  height:100vh;
 }
 
+header{
+  background-color: beige;
+  color: rgb(173, 16, 47);
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  height: auto;
+}
+
+.header1{
+  padding: 10px 10px;
+}
+
+.header2{
+  text-align: center;
+  flex-shrink: 0;
+}
+
+main{
+  background-color: white;
+  padding: 10px;
+  flex:1;
+}
+footer{
+  background-color: beige;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+}
 .head2{
   font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.head2:hover{
+  color:blue;
 }
