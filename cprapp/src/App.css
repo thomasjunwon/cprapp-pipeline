@@ -17,6 +17,18 @@ header{
   height: auto;
 }
 
+.main-fixed{
+  position: absolute;
+  top: '100%';
+  box-shadow: '0 4px 8px gray';
+  background-color: beige;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
+  text-align: left;
+  padding-left: 25%;
+}
+
 .header1{
   padding: 10px 10px;
 }
@@ -38,6 +50,11 @@ footer{
 }
 .head2{
   font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+.head3{
+  font-size: 18px;
   text-decoration: none;
   color: black;
 }

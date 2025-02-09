@@ -10,8 +10,11 @@ import './App.css';
 function App() {
   const [activeMenu, setActiveMenu]=useState(null);
   const toggle=(menu)=>{
-    setActiveMenu(menu===activeMenu ? null : menu);
+    setActiveMenu(activeMenu===menu ? null : menu);
   }
+  const listItemStyle={
+    flex:1, marginRight: '40px', borderRight:'1px solid #ccc'
+  };
   return (
     <Router>
       <div class="container">
@@ -19,22 +22,24 @@ function App() {
           <h1 class='header1'>심포니</h1>
           <nav class='header2' >
             <ul style={{ display: 'flex', listStyleType: 'none',padding:0 }}>
-              <li style={{ flex:1, marginRight: '40px', borderRight:'1px solid #ccc'}} ><Link to="/" class="head2" onClick={()=>toggle('home')}>홈</Link></li>
-              <li style={{ flex:1, marginRight: '40px',borderRight:'1px solid #ccc' }} ><Link to="/about" class="head2" onClick={()=>toggle('about')}>소개</Link>{(activeMenu=='about')&&(
-            <ul>
-              <li><Link to="/home/why">심포니 설립목적</Link></li>
-              <li><Link to="/home/history">심포니 연혁</Link></li>
-              <li><Link to="/home/how">봉사 참여 과정</Link></li>
-              <li><Link to="/home/tojon">봉사해보고 싶어요!</Link></li>
-            </ul>
-          )}</li>
-              <li style={{ flex:1, marginRight: '40px',borderRight:'1px solid #ccc' }} ><Link to="/medicalboard" class="head2" onClick={()=>toggle('medicalboard')}>의학게시판</Link></li>
-              <li style={{ flex:1, marginRight: '40px',borderRight:'1px solid #ccc' }} ><Link to="/communityboard" class="head2" onClick={()=>toggle('communityboard')}>활동게시판</Link></li>
+              <li style={listItemStyle} ><Link to="/" class="head2" onClick={()=>toggle('home')}>홈</Link></li>
+              <li style={listItemStyle} ><Link to="/about" class="head2" onClick={()=>toggle('about')}>소개</Link>
+              </li>
+              <li style={listItemStyle} ><Link to="/medicalboard" class="head2" onClick={()=>toggle('medicalboard')}>의학게시판</Link></li>
+              <li style={listItemStyle} ><Link to="/communityboard" class="head2" onClick={()=>toggle('communityboard')}>활동게시판</Link></li>
               <li style={{flex:1}}><Link to="/schedules" class="head2" onClick={()=>toggle('schedules')}>스케줄</Link></li>
             </ul>
-          </nav>
-          
+            {(activeMenu==='about')&&(
+            <ul class='main-fixed'>
+              <li><Link to="/home/why" class="head3">심포니 설립목적</Link></li>
+              <li><Link to="/home/history" class="head3">심포니 연혁</Link></li>
+              <li><Link to="/home/how" class="head3">봉사 참여 과정</Link></li>
+              <li><Link to="/home/tojon" class="head3">봉사해보고 싶어요!</Link></li>
+            </ul>
+          )}
+          </nav>  
         </header>
+
         <div>
           <main>
            <Routes>
@@ -46,6 +51,7 @@ function App() {
             </Routes>
           </main>
         </div>
+
         <footer>
           <p>&copy;made by thomasjunwon</p>
         </footer>
