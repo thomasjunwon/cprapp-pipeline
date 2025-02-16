@@ -19,7 +19,7 @@ public class Article {
     private Member member;
 
     private String title;
-    private String author;
+    private String author=member.getUserId();
     private String content;
 
 }

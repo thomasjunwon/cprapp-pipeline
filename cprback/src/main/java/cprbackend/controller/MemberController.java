@@ -53,6 +53,4 @@ public class MemberController {
             }
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<?>
 }
